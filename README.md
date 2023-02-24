@@ -11,5 +11,6 @@ Student Info
 
 * Student Name: CHU BAO MINH 
 * Student ID: BI12-281
+* Class: DS
 
 
