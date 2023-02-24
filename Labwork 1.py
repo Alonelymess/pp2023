@@ -40,18 +40,24 @@ def input_course():
     return list_courses
 
 def show_courses(list_courses):
-    for i in range(len(list_courses)):
-        print("\n" + list_courses[i]['Name'] + " " + list_courses[i]['ID'])
-        print('Marks of students: ')
+    course_ID = input("Enter course ID: ")
+    for k in range(len(list_courses)):
+        if list_courses[k]['ID'] == course_ID:
+            print("\n" + list_courses[k]['Name'] + " " + list_courses[k]['ID'])
+            print('Marks of students: ')
 
-        for j in range(len(list_courses[i]['Marks of students'])):
-            print('\t' + "Name: " + list_courses[i]['Marks of students'][j]['Student name'])
-            print('\t' + "ID: " + list_courses[i]['Marks of students'][j]['Student ID'])
-            print('\t' + "Score: " + list_courses[i]['Marks of students'][j]['Score'])
-            print('\n')
+            for j in range(len(list_courses[k]['Marks of students'])):
+                print('\t' + "Name: " + list_courses[k]['Marks of students'][j]['Student name'])
+                print('\t' + "ID: " + list_courses[k]['Marks of students'][j]['Student ID'])
+                print('\t' + "Score: " + list_courses[k]['Marks of students'][j]['Score'])
+                print('\n')
+    
 
 #Init data
-show_courses(input_course())
+while True:
+    show_courses(input_course())
+    if input("Do you want to continue? (Y/N): ") == 'N':
+        break
 
     
 
