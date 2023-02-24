@@ -55,9 +55,14 @@ def show_courses(list_courses):
 
 #Init data
 while True:
-    show_courses(input_course())
-    if input("Do you want to continue? (Y/N): ") == 'N':
-        break
+    list_courses = input_course()
+    while True:
+        show_courses(list_courses)
+        if input("Do you want to continue searching? (Y/N): ") == 'N':
+            break
+    if input("Do you want to redo? (Y/N): ") == 'N':
+            break
+
 
     
 
