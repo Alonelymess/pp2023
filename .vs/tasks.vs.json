@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Labwork 2",
+      "appliesTo": "Labwork 2.py",
+      "type": "launch"
+    }
+  ]
+}

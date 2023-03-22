@@ -202,11 +202,7 @@ class Course(Utils):
                 return i
         return False
 
-    def set_Students_learnt(self, students_list, courses_id):
-        if len(self.__students_learnt) == 0:
-            print('No course currently active!')
-            return
-  
+    def set_Students_learnt(self, students_list, courses_id): 
         while True:
             try:
                 count = int(input(f'Enter number of students learnt course ID {courses_id}: '))
@@ -376,7 +372,9 @@ class Manager(Utils):
             elif choice == '3':
                 student_list = self.__student_manager.get_Student_list()
                 course_list = self.__course_manager.get_Course_list()
-
+                if len(course_list) == 0:
+                    print('No course currently active!')
+                    return
                 while True:
                     try:
                         course_id = int(input('Enter course ID that you want to add students : '))
