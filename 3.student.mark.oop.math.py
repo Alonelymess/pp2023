@@ -461,7 +461,7 @@ class Manager(Utils):
             if i.get_Id() == student_id:
                 i.show_Student()
 
-                gpa = np.empty(1)
+                gpa = np.zeros(1)
                 for k in self.__course_manager.get_Course_list():
                     for j in k.get_Students_learnt():
                         if student_id == j[0].get_Id():
