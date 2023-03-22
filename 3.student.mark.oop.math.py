@@ -395,9 +395,16 @@ class Manager(Utils):
 
                 while self.check_Id(course_id) == False:
                     course_id = int(input('Please enter valid course ID: '))
+
+                found = False
                 for i in course_list:
                     if i.get_Id() == course_id:
+                        found = True
                         i.set_Students_learnt(student_list, course_id)
+
+                if found == False:
+                    print('Course not found!')
+
             elif choice == '4':
                 return
             else:
@@ -447,14 +454,14 @@ class Manager(Utils):
             if i.get_Id() == student_id:
                 i.show_Student()
 
-                gpa = []
+                gpa = np.array()
                 for k in self.__course_manager.get_Course_list():
                     for j in k.get_Students_learnt():
                         if student_id == j[0].get_Id():
                             print(f'    Course learnt: {k.get_Name()}    ID: {k.get_Id()}  Mark: {j[1]}')
-                            gpa.append(j[1]/k.get_Credits())
+                            np.append(gpa, j[1]/k.get_Credits())
                 
-                print('    GPA: ', sum(gpa).round(2))
+                print('    GPA: ', np.sum(gpa).round(2))
 
                 return
              
