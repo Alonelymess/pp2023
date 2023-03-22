@@ -1,26 +1,27 @@
 '''
     Utils class:
         attribute: name, id
-        method: set_name, set_id, get_name, get_id, check_id
-    Student Manager class:
-        attribute: students
-        method: add_Student, remove_student, show_students, get_student_list
+        method: set_Name, set_Id, get_Name, get_Id, check_Id
     
-    Student class:
+    Student class(Utils):
         attribute: name, id, dob
-        method: get_Name, get_Id
+        method: set_Name, set_Id, set_Dob, get_Name, get_Id, get_Dob, check_Id
 
-    Courses Manager class:
-        attribute: courses
-        method: add_course, remove_course, show_courses, get_courses_list, get_courses_count
+    Student Manager class(Student):
+        attribute: students
+        method: add_Students change_Student, remove_Students, show_Students, get_Student_list
 
     Course class:
         attribute: name, ID
-        method: get_name, get_ID
+        method: set_Name, set_Id, get_Name, get_Id, check_Id
+
+    Courses Manager class:
+        attribute: courses
+        method: add_Courses, change_Course, remove_Courses, show_Courses, get_Courses_list
 
     Manager class:
-        attribute: marks, Student Manager, Courses Manager
-        method: add_mark, remove_mark, get_marks_list           
+        attribute: student_manager, courses_manager
+        method: add_Info, remove_Info, change_Info, search_Student, search_Course           
 '''
 
 
