@@ -461,7 +461,7 @@ class Manager(Utils):
                             print(f'    Course learnt: {k.get_Name()}    ID: {k.get_Id()}  Mark: {j[1]}')
                             gpa = np.append(gpa, j[1]/k.get_Credits())
                 
-                print('    GPA: ', np.sum(gpa))
+                print('    GPA: ', np.sum(gpa).round(2))
 
                 return
              
