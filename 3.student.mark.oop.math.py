@@ -213,6 +213,10 @@ class Course(Utils):
         while True:
             try:
                 count = int(input(f'Enter number of students learnt course ID {courses_id}: '))
+                if count > len(students_list) or count <= 0:
+                    print('Invalid number of students!')
+                    print('Currently there are', len(students_list), 'students in the list!')
+                    continue
                 break
             except ValueError:
                  print('Invalid number of students!')
@@ -235,7 +239,10 @@ class Course(Utils):
 
             while found == False:
                 print('Student not found!')
-                student_id = int(input(f'Enter right student {i} ID learn this course: '))
+                student_id = int(input(f'Enter student {i+1} ID learn this course: '))
+                for j in students_list:
+                    if student_id == j.get_Id():
+                        found = j
 
             mark = math.floor(float(input('Enter mark of this student: ')))
             while mark < 0 or mark > 20:
