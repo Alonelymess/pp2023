@@ -454,14 +454,14 @@ class Manager(Utils):
             if i.get_Id() == student_id:
                 i.show_Student()
 
-                gpa = np.array()
+                gpa = np.empty(1)
                 for k in self.__course_manager.get_Course_list():
                     for j in k.get_Students_learnt():
                         if student_id == j[0].get_Id():
                             print(f'    Course learnt: {k.get_Name()}    ID: {k.get_Id()}  Mark: {j[1]}')
-                            np.append(gpa, j[1]/k.get_Credits())
+                            gpa = np.append(gpa, j[1]/k.get_Credits())
                 
-                print('    GPA: ', np.sum(gpa).round(2))
+                print('    GPA: ', np.sum(gpa))
 
                 return
              
